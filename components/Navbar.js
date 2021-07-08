@@ -44,6 +44,9 @@ const Navbar = () => {
                     <Link href='/profile'>
                             <a className="dropdown-item" >Profile</a>
                     </Link>
+                    <Link href='/create'>
+                            <a className="dropdown-item">create product</a>
+                    </Link>
                     <Link href='#'>
                             <a className="dropdown-item" onClick={handleLogout} >Logout</a>
                     </Link>
