@@ -56,7 +56,7 @@ const Navbar = () => {
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
            <Link href='/'>
-                <a className="navbar-brand" href="#">Sky Sea</a>
+                <a className="navbar-brand" href="#">Book Store</a>
            </Link>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
