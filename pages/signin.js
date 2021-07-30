@@ -46,9 +46,13 @@ const Signin = () => {
       localStorage.setItem('firstLogin' , true)
     }
 
+    
+    
     useEffect(() =>{
-      if(Object.keys(auth).length !== 0) router.push('/')
+      if(Object.keys(auth).length !== 0) return router.push('/') 
     }, [auth])
+
+
 
     return (
         <div>

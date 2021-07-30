@@ -2,7 +2,7 @@
 import Cookie from 'js-cookie'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { DataContext } from '../store/GlobalState'
 
 const Navbar = () => {
@@ -27,6 +27,11 @@ const Navbar = () => {
         dispatch({ type: 'NOTIFY' ,  payload: {success: 'Logged out!'}})
     }
 
+    useEffect(() =>{
+        if(Object.keys(auth).length == 0) router.push('/')
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [auth])
+
     const loggedRouter = () => {
         return(
             <li className="nav-item dropdown">
@@ -44,9 +49,13 @@ const Navbar = () => {
                     <Link href='/profile'>
                             <a className="dropdown-item" >Profile</a>
                     </Link>
+                    {
+                    auth.user.role == 'admin' ?
                     <Link href='/create'>
                             <a className="dropdown-item">create product</a>
                     </Link>
+                    : null
+                    }
                     <Link href='#'>
                             <a className="dropdown-item" onClick={handleLogout} >Logout</a>
                     </Link>
